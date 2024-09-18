@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #aebff7;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bear {
+    width: 20%;
+    height: 35%;
+    border-radius: 50%;
+    background-color: #cf825d;
+    position: relative;
+}
+
+.ears {
+    position: relative;
+    z-index: -1;
+}
+
+.ears .ear-left,
+.ears .ear-right {
+    position: absolute;
+    top: 35px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #cf825d;
+}
+
+.ears .ear-left {
+    left: 0;
+}
+
+.ears .ear-right {
+    right: 0;
+}
+
+.ears .ear-left .inner,
+.ears .ear-right .inner {
+    width: 30px;
+    height: 30px;
+    background-color: #e6c0ad;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.eyes .eye-left,
+.eyes .eye-right {
+    position: absolute;
+    top: 30%;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+.eyes .eye-left {
+    left: 30%;
+}
+
+.eyes .eye-right {
+    right: 30%;
+}
+
+.eyes .eye-left::after,
+.eyes .eye-right::after {
+    content: '';
+    position: absolute;
+    top: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #000 transparent transparent #000;
+    transform: rotate(45deg);
+    z-index: -1%;
+}
+
+.mouth {
+    width: 45%;
+    height: 55%;
+    background-color: #e6c0ad;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.mouth .nose {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.cone {
+    background-color: #f7e6ae;
+    width: 20%;
+    height: 30%;
+    position: absolute;
+    bottom: 10%;
+    border-radius: 10px;
+}
+
+.cone::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 120%;
+    height: 20px;
+    background-color: #f7e6ae;
+    border-radius: 30px;
+    box-shadow: -1px 3px 4px rgba(0 0 0, 0.15);
+
+}
+
+.cone .inner-cone {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.cone .inner-cone div {
+    background-color: #f7e6ae;
+    width: 15px;
+    height: 15px;
+    margin-top: 100%;
+    margin-left: 20%;
+}
